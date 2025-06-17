@@ -1,3 +1,24 @@
+ /* variables CSS y estilos globales base */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-text-primary: #1F2936;
+  --color-text-placeholder: #798EAE;
+  --color-bg-primary: #f9fafb;
+  --color-bg-sidebar: #FFFFFF;
+  --color-border-hr: #E2E8F0;
+  --color-hover-primary: limegreen;
+}
+
+body {      
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Esto es la estructura del layout principal, main y sidebar. */
 .layout {
   display: flex;
 }
@@ -17,3 +38,6 @@
   flex: 1;
   padding: 30px;
 }
+
+
+
