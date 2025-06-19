@@ -152,3 +152,60 @@ body {
 .sidebar__search-input::placeholder {
   color: var(--color-text-placeholder);
 }
+
+/* estos son los estilos de menus-submenu*/
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: 0.4s ease;
+}
+
+.menu__link:hover,
+.menu__link.active,
+.menu__submenu-link:hover {
+  color: #fff;
+  background: var(--color-hover-primary);
+  border-radius: 8px;
+}
+
+.menu__label {
+  transition: opacity 0.3s ease;
+}
+.sidebar--collapsed .menu__label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu__submenu {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+}
+
+.menu__item--open .menu__submenu {
+  display: block;
+}
+
+.menu__submenu-link {
+  display: block;
+  padding: 8px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
