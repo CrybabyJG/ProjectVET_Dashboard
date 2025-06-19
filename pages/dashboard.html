@@ -16,6 +16,7 @@
         <span class="material-symbols-rounded">menu</span>
       </button>
     </nav>
+
     <div class="layout">
       <aside class="sidebar sidebar--collapsed">
         <div class="sidebar__header">
@@ -29,8 +30,7 @@
           </button>
         </div>
 
-        <!-- esto es todo lo que esta dentro del navbar -->
-        <div class="sidebar_content">
+        <div class="sidebar__content">
           <form action="#" class="sidebar__search-form">
             <span class="material-symbols-rounded">search</span>
             <input
@@ -42,43 +42,78 @@
           </form>
 
           <ul class="menu">
-            <!-- Módulos y submenús son en esta área -->
-             <li class="menu__item menu__item--has-submenu">
-  <a href="#" class="menu__link">
-    <span class="material-symbols-rounded menu__icon">event</span>
-    <span class="menu__label">Gestión de Citas</span>
-    <span class="material-symbols-rounded menu__arrow">expand_more</span>
-  </a>
-  <ul class="menu__submenu">
-    <li class="menu__submenu-item"><a href="#" class="menu__submenu-link">Clientes</a></li>
-  </ul>
-</li>
+            <li class="menu__item menu__item--has-submenu">
+              <a href="#" class="menu__link">
+                <span class="material-symbols-rounded menu__icon">event</span>
+                <span class="menu__label">Gestión de Citas</span>
+                <span class="material-symbols-rounded menu__arrow"
+                  >expand_more</span
+                >
+              </a>
+              <ul class="menu__submenu">
+                <li class="menu__submenu-item">
+                  <a href="#" class="menu__submenu-link">Clientes</a>
+                </li>
+              </ul>
+            </li>
 
-<li class="menu__item menu__item--has-submenu">
-  <a href="#" class="menu__link">
-    <span class="material-symbols-rounded menu__icon">inventory_2</span>
-    <span class="menu__label">Inventario</span>
-    <span class="material-symbols-rounded menu__arrow">expand_more</span>
-  </a>
-  <ul class="menu__submenu">
-    <li class="menu__submenu-item"><a href="#" class="menu__submenu-link">Medicamento</a></li>
-    <li class="menu__submenu-item"><a href="#" class="menu__submenu-link">Proveedor</a></li>
-  </ul>
-</li>
+            <li class="menu__item menu__item--has-submenu">
+              <a href="#" class="menu__link">
+                <!-- <div> -->
+                <span class="material-symbols-rounded menu__icon"
+                  >inventory_2</span
+                >
+                <span class="menu__label">Inventario</span>
+                <!-- </div> -->
+                <span class="material-symbols-rounded menu__arrow"
+                  >expand_more</span
+                >
+              </a>
+              <ul class="menu__submenu">
+                <li class="menu__submenu-item">
+                  <a href="#" class="menu__submenu-link">Medicamentos</a>
+                </li>
+                <li class="menu__submenu-item">
+                  <a href="#" class="menu__submenu-link">Proveedor</a>
+                </li>
+              </ul>
+            </li>
 
-<li class="menu__item">
-  <a href="#" class="menu__link">
-    <span class="material-symbols-rounded menu__icon">settings</span>
-    <span class="menu__label">Configuración</span>
-  </a>
-</li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="material-symbols-rounded menu__icon"
+                  >settings</span
+                >
+                <span class="menu__label">Reporte</span>
+              </a>
+            </li>
           </ul>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle">
+            <div class="theme-toggle__label">
+              <span class="theme-toggle__icon material-symbols-rounded"
+                >dark_mode</span
+              >
+              <span class="theme-toggle__text">Modo Oscuro</span>
+            </div>
+            <div class="theme-toggle__track">
+              <div class="theme-toggle__indicator"></div>
+            </div>
+          </button>
         </div>
       </aside>
 
-      <!-- contenido principal -->
-      <main class="main"></main>
+      <main class="main">
+        <h1 class="main__title">Bienvenido a VetCare</h1>
+        <p class="main__card">
+          Selecciona un módulo en el menú lateral para comenzar a gestionar tus
+          citas, inventario o configuración del sistema.
+        </p>
+      </main>
     </div>
+
     <script src="../Scripts/dashboard.js"></script>
   </body>
 </html>
