@@ -39,5 +39,116 @@ body {
   padding: 30px;
 }
 
+/*Estilos de boton de navegación */
+.nav {
+  display: none;
+  padding: 15px 20px;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border-hr);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav__toggle {
+  background: var(--color-bg-sidebar);
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+/* Estilos de colapsado , expandido boton colapsar  y del sidebar en general */
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 18px;
+  border-bottom: 1px solid var(--color-border-hr);
+  position: relative;
+}
+
+.sidebar__logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+}
+
+.sidebar--collapsed .sidebar__logo {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar__toggle {
+  background: var(--color-bg-secondary);
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  position: absolute;
+  right: 18px;
+  transition: transform 0.4s ease;
+}
+
+.sidebar--collapsed .sidebar__toggle {
+  transform: translateX(-2px);
+  height: 48px;
+  width: 50px;
+}
+
+.sidebar__toggle span {
+  font-size: 1.75rem;
+  transition: transform 0.4s ease;
+}
+
+.sidebar--collapsed .sidebar__toggle span {
+  transform: rotate(180deg);
+}
+
+.sidebar__content {
+  padding: 20px 18px;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-placeholder) transparent;
+  overflow-x: hidden; /* ← Este es el más relevante para tu problema */
+}
 
 
+/* estos son los estilos de busqueda */
+
+.sidebar__search-form {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  min-height: 48px;
+}
+
+.sidebar__search-input {
+  background: none;
+  border: none;
+  outline: none;
+  margin-left: 15px;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  width: 100%;
+}
+
+.sidebar__search-input::placeholder {
+  color: var(--color-text-placeholder);
+}

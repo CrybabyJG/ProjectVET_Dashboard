@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VetCare | Sistema de Gestión Veterinaria</title>
-  <link rel="stylesheet" href="../Styles/dashboard-sidebar.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VetCare | Sistema de Gestión Veterinaria</title>
+    <link rel="stylesheet" href="../Styles/dashboard-sidebar.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+    />
+  </head>
   <body>
     <nav class="nav">
-  <button class="nav__toggle">
-    <span class="material-symbols-rounded">menu</span>
-  </button>
-</nav>
-  <div class="layout">
-    <aside class="sidebar sidebar--collapsed">
-    </aside>
-    <main class="main">
-    </main>
-  </div>
-</body>
+      <button class="nav__toggle">
+        <span class="material-symbols-rounded">menu</span>
+      </button>
+    </nav>
+    <div class="layout">
+      <aside class="sidebar sidebar--collapsed">
+        <div class="sidebar__header">
+          <img
+            src="../public/img/VetCare.png"
+            alt="VetCare"
+            class="sidebar__logo"
+          />
+          <button class="sidebar__toggle">
+            <span class="material-symbols-rounded">chevron_left</span>
+          </button>
+        </div>
+
+        <!-- esto es todo lo que esta dentro del navbar -->
+        <div class="sidebar_content">
+          <form action="#" class="sidebar__search-form">
+            <span class="material-symbols-rounded">search</span>
+            <input
+              type="search"
+              placeholder="Buscar..."
+              required
+              class="sidebar__search-input"
+            />
+          </form>
+
+          <ul class="menu">
+            <!-- Módulos y submenús son en esta área -->
+          </ul>
+        </div>
+      </aside>
+
+      <!-- contenido principal -->
+      <main class="main"></main>
+    </div>
+    <script src="../Scripts/dashboard.js"></script>
+  </body>
 </html>
