@@ -6,6 +6,7 @@
     <title>VetCare | Sistema de Gestión Veterinaria</title>
     <link rel="stylesheet" href="../Styles/dashboard-sidebar.css" />
     <link rel="stylesheet" href="../Styles/table.css" />
+    <link rel="stylesheet" href="../Styles/estilos.css">
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -14,6 +15,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
     />
+
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </head>
 
   <body>
@@ -59,7 +62,7 @@
               <ul class="menu__submenu">
                 <li class="menu__submenu-item">
                   <a href="#" class="menu__submenu-link" data-view="Clientes"
-                    >Clientes</a
+                    >Enfermedades</a
                   >
                 </li>
               </ul>
@@ -88,7 +91,7 @@
             </li>
 
             <li class="menu__item">
-              <a href="#" class="menu__link">
+              <a href="#" class="menu__link" data-view="Reporte">
                 <span class="material-symbols-rounded menu__icon"
                   >analytics</span
                 >
@@ -127,5 +130,6 @@
     <script src="../Scripts/dashboard.js"></script>
     <script src="../Scripts/cargarvistas.js"></script>
     <script src="../Scripts/table.js"></script>
+    <script src="../Scripts/estadisticas.js"></script>
   </body>
 </html>

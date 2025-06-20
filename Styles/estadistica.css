@@ -1,0 +1,91 @@
+body {
+      font-family: 'Poppins', sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .descripcion {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+   
+
+    .chart-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .chart-box h2 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    .chart-box p {
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      color: #777;
+    }
+
+    .main__card--title {
+      font-weight: bold;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .estadistica-titulo {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+
+
+.main__card {
+  background: var(--color-bg-sidebar);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .main__card {
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+  .main__card--title {
+    font-size: 1.4rem;
+  }
+  .estadistica-titulo {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main__card {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  .main__card--title {
+    font-size: 1.1rem;
+  }
+  .estadistica-titulo {
+    font-size: 0.95rem;
+  }
+  .main {
+    padding: 10px !important;
+  }
+  .chart-box {
+    padding: 10px;
+    border-radius: 6px;
+  }
+}
+
+

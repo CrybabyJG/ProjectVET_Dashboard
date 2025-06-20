@@ -1,15 +1,13 @@
-
-
 // Espera a que el DOM esté listo
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener("DOMContentLoaded", function () {
     // Delegación de eventos para los enlaces con data-view
-    document.body.addEventListener('click', function (e) {
-        const link = e.target.closest('[data-view]');
+    document.body.addEventListener("click", function (e) {
+        const link = e.target.closest("[data-view]");
         if (!link) return;
         e.preventDefault();
-        const viewKey = link.getAttribute('data-view');
+        const viewKey = link.getAttribute("data-view");
         const views = {
-            'Clientes': `
+            Clientes: `
                 <div class="title-container">
                     <h2>Enfermedades</h2>
                     <button class="btn-add" id="addEnfermedadBtn">Agregar Enfermedad</button>
@@ -42,13 +40,48 @@ window.addEventListener('DOMContentLoaded', function () {
                         </form>
                     </div>
                 </div>
-            `
+            `,
+            Reporte: `
+
+            <div class="main__card ">
+                     <h2>Reporte de Medicamentos (Maestro-Detalle)</h2>
+            </div>
+                
+            <div class="main__card ">
+                <h3 class="estadistica-titulo">Medicamentos por Presentación</h3>
+            </div>
+                <p>Cantidad total de medicamentos registrados por tipo de presentación.</p>
+                <div id="bar-chart"></div>
+  
+
+            <div class="main__card">
+                <h3 class="estadistica-titulo">Dosis Totales por Presentación</h3>
+            </div>
+                <p>Total de unidades recetadas (sumando todas las cantidades en citas).</p>
+                <div id="line-chart"></div>
+ 
+
+            <div class="main__card">
+                <h3 class="estadistica-titulo">Precio Promedio por Presentación</h3>
+            </div>
+                <p>Promedio del precio de medicamentos según presentación.</p>
+                <div id="radar-chart"></div>
+ 
+
+            `,
         };
-        const mainContent = document.querySelector('.main-content');
+        const mainContent = document.querySelector(".main-content");
         if (mainContent && views[viewKey]) {
             mainContent.innerHTML = views[viewKey];
-            if (viewKey === 'Clientes' && typeof window.cargarEnfermedades === 'function') {
+            if (
+                viewKey === "Clientes" &&
+                typeof window.cargarEnfermedades === "function"
+            ) {
                 window.cargarEnfermedades();
+            }
+            // Ejecutar renderCharts si la vista es Reporte
+            if (viewKey === "Reporte" && typeof window.renderCharts === "function") {
+                window.renderCharts();
             }
         }
     });
