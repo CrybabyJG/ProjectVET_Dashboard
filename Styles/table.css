@@ -293,6 +293,10 @@ body.dark-theme {
   .form-client__input {
     width: 100%;
   }
+
+  
+
+
 }
 
 @media screen and (max-width: 480px) {
@@ -311,6 +315,7 @@ body.dark-theme {
   .form-client__input {
     font-size: 0.95rem;
   }
+  
 }
 
 .main-content {
@@ -322,4 +327,6 @@ body.dark-theme {
   box-sizing: border-box;
   flex: 1 1 auto;
 }
+
+
 
