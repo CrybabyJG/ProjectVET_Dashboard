@@ -30,20 +30,29 @@ function cargarEnfermedades() {
 
                 pageData.forEach(item => {
                     const tr = tbody.insertRow();
-                    tr.insertCell(0).textContent = item.ID_Enfermedades;
-                    tr.insertCell(1).textContent = item.Codigo_Enfermedades;
-                    tr.insertCell(2).textContent = item.Nombre_Enfermedad;
-
+                    // ID
+                    const tdId = tr.insertCell(0);
+                    tdId.textContent = item.ID_Enfermedades;
+                    tdId.setAttribute('data-label', 'ID');
+                    // Código
+                    const tdCodigo = tr.insertCell(1);
+                    tdCodigo.textContent = item.Codigo_Enfermedades;
+                    tdCodigo.setAttribute('data-label', 'Código');
+                    // Nombre
+                    const tdNombre = tr.insertCell(2);
+                    tdNombre.textContent = item.Nombre_Enfermedad;
+                    tdNombre.setAttribute('data-label', 'Nombre');
                     // Editar
                     const tdEdit = tr.insertCell(3);
+                    tdEdit.setAttribute('data-label', 'Editar');
                     const btnEdit = document.createElement('button');
                     btnEdit.classList.add('btn-edit');
                     btnEdit.innerHTML = '<i class="bx bx-edit"></i>';
                     btnEdit.addEventListener('click', () => abrirModal(item));
                     tdEdit.appendChild(btnEdit);
-
                     // Eliminar
                     const tdDel = tr.insertCell(4);
+                    tdDel.setAttribute('data-label', 'Eliminar');
                     const btnDel = document.createElement('button');
                     btnDel.classList.add('btn-delete');
                     btnDel.innerHTML = '<i class="bx bx-trash"></i>';

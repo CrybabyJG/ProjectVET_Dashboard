@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         const viewKey = link.getAttribute("data-view");
         const views = {
-            Clientes: `
+            Enfermedades: `
                 <div class="title-container">
                     <h2>Enfermedades</h2>
                     <button class="btn-add" id="addEnfermedadBtn">Agregar Enfermedad</button>
@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
         if (mainContent && views[viewKey]) {
             mainContent.innerHTML = views[viewKey];
             if (
-                viewKey === "Clientes" &&
+                viewKey === "Enfermedades" &&
                 typeof window.cargarEnfermedades === "function"
             ) {
                 window.cargarEnfermedades();
