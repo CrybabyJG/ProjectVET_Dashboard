@@ -173,7 +173,7 @@ body.dark-theme {
   color: var(--color-text-primary);
 }
 
-/* ===== MODAL MEJORADO ===== */
+/* === MODAL MEJORADO Y RESPONSIVE === */
 .modal {
   display: none;
   position: fixed;
@@ -183,9 +183,11 @@ body.dark-theme {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background: rgba(20, 24, 31, 0.65); /* Más oscuro */
+  background: rgba(20, 24, 31, 0.65);
   backdrop-filter: blur(2px);
   animation: modal-fade-in 0.25s;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes modal-fade-in {
@@ -195,14 +197,17 @@ body.dark-theme {
 
 .modal-content {
   background: var(--color-bg-sidebar);
-  margin: 5% auto;
-  padding: 36px 32px 28px 32px;
+  margin: 0 auto;
+  padding: 40px 36px 32px 36px;
   border-radius: 18px;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
   position: relative;
   animation: modal-pop-in 0.3s cubic-bezier(.18,.89,.32,1.28);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 @keyframes modal-pop-in {
@@ -228,11 +233,56 @@ body.dark-theme {
 }
 
 .modal__title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   color: var(--color-text-primary);
   text-align: center;
+}
+
+.form-client {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-client__label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.form-client__input {
+  padding: 12px;
+  font-size: 1.05rem;
+  border: 1.5px solid var(--color-border-hr);
+  border-radius: 10px;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: border-color 0.3s;
+  margin-bottom: 2px;
+}
+.form-client__input:focus {
+  outline: none;
+  border-color: var(--color-hover-primary);
+  background: #f3fdf3;
+}
+
+.btn-save {
+  padding: 12px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--color-hover-primary);
+  color: #fff;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+.btn-save:hover {
+  background-color: #28a745;
 }
 
 @media screen and (max-width: 600px) {
@@ -243,60 +293,25 @@ body.dark-theme {
     margin: 10% auto;
     padding: 18px 8px 16px 8px;
     border-radius: 12px;
+    gap: 12px;
   }
   .modal__title {
     font-size: 1.1rem;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
   .close {
     top: 10px;
     right: 12px;
     font-size: 2rem;
   }
-}
-
-/* ===== Formulario dentro del modal ===== */
-.form-client {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-client__label {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
-}
-
-.form-client__input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid var(--color-border-hr);
-  border-radius: 8px;
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  transition: border-color 0.3s ease;
-}
-
-.form-client__input:focus {
-  outline: none;
-  border-color: var(--color-hover-primary);
-}
-
-.btn-save {
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: var(--color-hover-primary);
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.btn-save:hover {
-  background-color: #28a745;
+  .form-client__input {
+    font-size: 0.98rem;
+    padding: 10px;
+  }
+  .btn-save {
+    font-size: 0.98rem;
+    padding: 10px;
+  }
 }
 
 /*responsive table*/
@@ -390,6 +405,40 @@ body.dark-theme {
   
 }
 
+/* === Mejoras para tabla responsive y ajuste al main === */
+.table-client {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  table-layout: auto;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.main-content table,
+.main-content .table-client {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mostrar títulos de campo en todas las pantallas pequeñas */
+@media screen and (max-width: 900px) {
+  .table-client__body td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--color-text-placeholder);
+    min-width: 110px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+}
+
+/* Asegura que la tabla nunca desborde el main */
+.main-content {
+  overflow-x: auto;
+}
+
 .main-content {
   width: 100%;
   min-height: 0;
@@ -406,6 +455,35 @@ body.dark-theme {
 
 body.dark-theme .sidebar__search-form .material-symbols-rounded {
   color: var(--color-text-primary);
+}
+
+.form-client {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 16px;
+}
+
+.form-row {
+  display: flex;
+  flex: 1 1 100%;
+  gap: 16px;
+}
+
+.form-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-client {
+    gap: 12px 0;
+  }
 }
 
 
