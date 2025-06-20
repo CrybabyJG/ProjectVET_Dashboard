@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VetCare | Sistema de Gestión Veterinaria</title>
     <link rel="stylesheet" href="../Styles/dashboard-sidebar.css" />
+    <link rel="stylesheet" href="../Styles/table.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
     />
   </head>
+
   <body>
     <nav class="nav">
       <button class="nav__toggle">
@@ -52,7 +58,9 @@
               </a>
               <ul class="menu__submenu">
                 <li class="menu__submenu-item">
-                  <a href="#" class="menu__submenu-link">Clientes</a>
+                  <a href="#" class="menu__submenu-link" data-view="Clientes"
+                    >Clientes</a
+                  >
                 </li>
               </ul>
             </li>
@@ -82,7 +90,7 @@
             <li class="menu__item">
               <a href="#" class="menu__link">
                 <span class="material-symbols-rounded menu__icon"
-                  >settings</span
+                  >analytics</span
                 >
                 <span class="menu__label">Reporte</span>
               </a>
@@ -106,14 +114,18 @@
       </aside>
 
       <main class="main">
-        <h1 class="main__title">Bienvenido a VetCare</h1>
-        <p class="main__card">
-          Selecciona un módulo en el menú lateral para comenzar a gestionar tus
-          citas, inventario o configuración del sistema.
-        </p>
+        <div class="main-content">
+          <h1 class="main__title">Bienvenido a VetCare</h1>
+          <p class="main__card">
+            Selecciona un módulo en el menú lateral para comenzar a gestionar
+            tus citas, inventario o configuración del sistema.
+          </p>
+        </div>
       </main>
     </div>
 
     <script src="../Scripts/dashboard.js"></script>
+    <script src="../Scripts/cargarvistas.js"></script>
+    <script src="../Scripts/table.js"></script>
   </body>
 </html>
