@@ -269,6 +269,15 @@ body.dark-theme {
   background: #f3fdf3;
 }
 
+body.dark-theme .form-client__input {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+body.dark-theme .form-client__input:focus {
+  background: #232e3e;
+  color: var(--color-text-primary);
+}
+
 .btn-save {
   padding: 12px;
   font-size: 1.08rem;
